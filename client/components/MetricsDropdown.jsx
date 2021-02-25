@@ -39,7 +39,7 @@ function MetricsDropdown({ setPostMetrics }) {
             {...params}
             variant='outlined'
             label='Metrics'
-            placeholder='Favorites'
+            placeholder='Selections'
             value='selectedMetrics'
           />
         )}
@@ -48,6 +48,7 @@ function MetricsDropdown({ setPostMetrics }) {
   );
 }
 
+// metrics commented out need more testing
 const selectedMetrics = [
   'brokertopicmetrics_bytesin_total',
   'brokertopicmetrics_bytesout_total',

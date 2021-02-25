@@ -5,6 +5,7 @@ import Welcome from './containers/WelcomeContainer.jsx';
 import ClusterContainer from './containers/ClusterContainer.jsx';
 import MetricsContainer from './containers/MetricsContainer.jsx';
 import ClusterNodeContainer from './containers/ClusterNodeContainer.jsx';
+import About from './containers/AboutContainer.jsx';
 import ErrorPage from './components/ErrorPage.jsx';
 import { makeStyles } from '@material-ui/core/styles';
 
@@ -27,6 +28,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
+// top level componenet for klustr
 function App() {
   const [redirect, setRedirect] = useState(false);
   const [jMXPort, setJMXPort] = useState('');
@@ -70,7 +72,9 @@ function App() {
           <Route path='/brokerView'>
             <ClusterNodeContainer setRedirect={setRedirect} />
           </Route>
-          {/* <Route path='/about' component={About} /> */}
+          <Route path='/about'>
+            <About setRedirect={setRedirect} />
+          </Route>
           <Route component={ErrorPage} />
         </Switch>
       </div>
